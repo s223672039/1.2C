@@ -3,57 +3,65 @@
   <title>Exploring JavaScript Concepts</title>
 </head>
 <body>
+  <div id="output"></div>
   <script>
+    const outputDiv = document.getElementById("output");
+
     // Discovering String Methods
     const text = "Greetings, Universe!";
-    document.write("<h2>Working with Text:</h2>");
-    document.write("Original Text: " + text + "<br>");
-    document.write("Length: " + text.length + "<br>");
-    document.write("Uppercase: " + text.toUpperCase() + "<br>");
-    document.write("Position of 'Universe': " + text.indexOf("Universe") + "<br>");
-    document.write("Subtext: " + text.substring(0, 9) + "<br>");
-    document.write("Revised: " + text.replace("Universe", "Galaxy") + "<br>");
+    outputDiv.innerHTML += "<h2>String Manipulation:</h2>";
+    outputDiv.innerHTML += "<p>Original Text: " + text + "</p>";
+    outputDiv.innerHTML += "<p>Text Length: " + text.length + "</p>";
+    outputDiv.innerHTML += "<p>Uppercase: " + text.toUpperCase() + "</p>";
+    outputDiv.innerHTML += "<p>Position of 'Universe': " + text.indexOf("Universe") + "</p>";
+    outputDiv.innerHTML += "<p>Subtext: " + text.substring(0, 9) + "</p>";
+    outputDiv.innerHTML += "<p>Revised: " + text.replace("Universe", "Galaxy") + "</p>";
 
     // Exploring Number Methods
-    const decimal = 456.789;
-    document.write("<h2>Playing with Numbers:</h2>");
-    document.write("Number: " + decimal + "<br>");
-    document.write("Rounded to 2 decimals: " + decimal.toFixed(2) + "<br>");
-    document.write("String Representation: " + decimal.toString() + "<br>");
-    document.write("Integer Check: " + Number.isInteger(decimal) + "<br>");
-    document.write("Rounded Value: " + Math.round(decimal) + "<br>");
-    document.write("Random between 0 and 1: " + Math.random() + "<br>");
+    const decimal = 123.123;
+    outputDiv.innerHTML += "<h2>Playing with Numbers:</h2>";
+    outputDiv.innerHTML += "<p>Number: " + decimal + "</p>";
+    outputDiv.innerHTML += "<p>Rounded (2 decimals): " + decimal.toFixed(2) + "</p>";
+    outputDiv.innerHTML += "<p>String Representation: " + decimal.toString() + "</p>";
+    outputDiv.innerHTML += "<p>Is Integer: " + Number.isInteger(decimal) + "</p>";
+    outputDiv.innerHTML += "<p>Rounded Value: " + Math.round(decimal) + "</p>";
+    outputDiv.innerHTML += "<p>Random between 0 and 1: " + Math.random() + "</p>";
 
     // Engaging with Arrays
-    const mixedData = ["apple", 123, "banana", 456, "cherry"];
-    document.write("<h2>Manipulating Arrays:</h2>");
-    document.write("Array Contents: " + mixedData + "<br>");
-    document.write("Total Elements: " + mixedData.length + "<br>");
-    document.write("Joined with Commas: " + mixedData.join(", ") + "<br>");
-    document.write("Adding 'grape': " + mixedData.push("grape") + "<br>");
-    document.write("Removing Last: " + mixedData.pop() + "<br>");
-    document.write("Reversed Order: " + mixedData.reverse() + "<br>");
+    const mixedData = ["ABCD", 123, "EFGH", 456, "IJKLM"];
+    outputDiv.innerHTML += "<h2>Manipulating Arrays:</h2>";
+    outputDiv.innerHTML += "<p>Array Contents: " + mixedData.join(", ") + "</p>";
+    outputDiv.innerHTML += "<p>Total Elements: " + mixedData.length + "</p>";
+
+    mixedData.push("NOPQ");
+    outputDiv.innerHTML += "<p>After Adding 'grape': " + mixedData.join(", ") + "</p>";
+
+    mixedData.pop();
+    outputDiv.innerHTML += "<p>After Removing Last Element: " + mixedData.join(", ") + "</p>";
+
+    mixedData.reverse();
+    outputDiv.innerHTML += "<p>After Reversing: " + mixedData.join(", ") + "</p>";
 
     // Time and Date Methods
     const present = new Date();
-    document.write("<h2>Unraveling Time:</h2>");
-    document.write("Today's Date: " + present.toDateString() + "<br>");
-    document.write("Current Time: " + present.toTimeString() + "<br>");
-    document.write("Current Year: " + present.getFullYear() + "<br>");
-    document.write("Month (0-11): " + present.getMonth() + "<br>");
-    document.write("Day of the Month: " + present.getDate() + "<br>");
+    outputDiv.innerHTML += "<h2>Time and Date:</h2>";
+    outputDiv.innerHTML += "<p>Today's Date: " + present.toDateString() + "</p>";
+    outputDiv.innerHTML += "<p>Current Time: " + present.toTimeString() + "</p>";
+    outputDiv.innerHTML += "<p>Current Year: " + present.getFullYear() + "</p>";
+    outputDiv.innerHTML += "<p>Month (0-11): " + present.getMonth() + "</p>";
+    outputDiv.innerHTML += "<p>Day of the Month: " + present.getDate() + "</p>";
 
     // Function Exploration
     function welcome(name) {
       return "Greetings, " + name + "!";
     }
-    document.write("<h2>Function Endeavors:</h2>");
-    document.write(welcome("Alice") + "<br>");
+    outputDiv.innerHTML += "<h2>Function Usage:</h2>";
+    outputDiv.innerHTML += "<p>" + welcome("Namra") + "</p>";
 
     const sum = function(x, y) {
       return x + y;
     };
-    document.write("Sum of 3 and 5: " + sum(3, 5) + "<br>");
+    outputDiv.innerHTML += "<p>Sum of 200 and 500: " + sum(200, 500) + "</p>";
   </script>
 </body>
 </html>
