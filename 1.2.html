@@ -16,6 +16,9 @@
     outputDiv.innerHTML += "<p>Position of 'Universe': " + text.indexOf("Universe") + "</p>";
     outputDiv.innerHTML += "<p>Subtext: " + text.substring(0, 9) + "</p>";
     outputDiv.innerHTML += "<p>Revised: " + text.replace("Universe", "Galaxy") + "</p>";
+    outputDiv.innerHTML += "<p>Character at Position 5: " + text.charAt(5) + "</p>";
+    outputDiv.innerHTML += "<p>Last 5 Characters: " + text.slice(-5) + "</p>";
+    outputDiv.innerHTML += "<p>Split by Comma: " + text.split(",")[0] + "</p>";
 
     // Exploring Number Methods
     const decimal = 123.123;
@@ -26,6 +29,8 @@
     outputDiv.innerHTML += "<p>Is Integer: " + Number.isInteger(decimal) + "</p>";
     outputDiv.innerHTML += "<p>Rounded Value: " + Math.round(decimal) + "</p>";
     outputDiv.innerHTML += "<p>Random between 0 and 1: " + Math.random() + "</p>";
+    outputDiv.innerHTML += "<p>Absolute Value: " + Math.abs(decimal) + "</p>";
+    outputDiv.innerHTML += "<p>Exponentiation: " + Math.pow(2, 3) + "</p>";
 
     // Engaging with Arrays
     const mixedData = ["ABCD", 123, "EFGH", 456, "IJKLM"];
@@ -34,7 +39,7 @@
     outputDiv.innerHTML += "<p>Total Elements: " + mixedData.length + "</p>";
 
     mixedData.push("NOPQ");
-    outputDiv.innerHTML += "<p>After Adding 'grape': " + mixedData.join(", ") + "</p>";
+    outputDiv.innerHTML += "<p>After Adding 'NOPQ': " + mixedData.join(", ") + "</p>";
 
     mixedData.pop();
     outputDiv.innerHTML += "<p>After Removing Last Element: " + mixedData.join(", ") + "</p>";
@@ -62,6 +67,43 @@
       return x + y;
     };
     outputDiv.innerHTML += "<p>Sum of 200 and 500: " + sum(200, 500) + "</p>";
+
+    function multiply(x, y) {
+      return x * y;
+    }
+    outputDiv.innerHTML += "<p>Multiply 10 by 5: " + multiply(10, 5) + "</p>";
+
+    function greetTime(name) {
+      const hour = present.getHours();
+      if (hour < 12) {
+        return "Good morning, " + name + "!";
+      } else if (hour < 18) {
+        return "Good afternoon, " + name + "!";
+      } else {
+        return "Good evening, " + name + "!";
+      }
+    }
+    outputDiv.innerHTML += "<p>" + greetTime("Alice") + "</p>";
+
+    function calculateAverage(numbers) {
+      const sum = numbers.reduce((acc, num) => acc + num, 0);
+      return sum / numbers.length;
+    }
+    const numberList = [1, 2, 3, 4, 5];
+    outputDiv.innerHTML += "<p>Average of [1, 2, 3, 4, 5]: " + calculateAverage(numberList) + "</p>";
+
+    function isPalindrome(word) {
+      const reversed = word.split("").reverse().join("");
+      return word === reversed;
+    }
+    const palindromeWord = "racecar";
+    outputDiv.innerHTML += "<p>Is '" + palindromeWord + "' a palindrome? " + isPalindrome(palindromeWord) + "</p>";
+
+    function findMax(numbers) {
+      return Math.max(...numbers);
+    }
+    const maxNumbers = [7, 2, 9, 5, 1];
+    outputDiv.innerHTML += "<p>Maximum in [7, 2, 9, 5, 1]: " + findMax(maxNumbers) + "</p>";
   </script>
 </body>
 </html>
